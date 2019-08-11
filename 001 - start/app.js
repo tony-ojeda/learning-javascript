@@ -1,8 +1,2 @@
-// var , let , const
-var producto = 'libro';
-var producto = 'libro2';
-console.log(producto);
-
-let activo = 'empresa';
-let activo = 'empresa2';
-console.log(activo);
+// const 
+const COLOR = red; // una constante siempre tiene que inicializarse, ademas no puedo cambiar su valor en el transcurso del desarrollo
