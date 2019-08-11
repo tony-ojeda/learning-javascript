@@ -1,9 +1,8 @@
 // var , let , const
-var nombre = 'tony',
-    apellido = 'ojeda';
+var producto = 'libro';
+var producto = 'libro2';
+console.log(producto);
 
-// mas de una palabra
-var primerNombre = 'Tony'; // camelcase  recomendad en js
-var primer_nombre = 'Tony'; // underscore
-var PrimerNombre = 'Tony'; // pascalcase
-var primernombre = 'tony';
+let activo = 'empresa';
+let activo = 'empresa2';
+console.log(activo);
