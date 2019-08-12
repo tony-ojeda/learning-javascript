@@ -1,19 +1,16 @@
-// tipos de datos
-// javascrip es un lenguaje del tipo dinamico donde no se especifican el tipo de dato
+// Operadores de comparación
 
-let valor;
+const numero1 = 20;
+const numero2 = 50;
+const numero3 = '20';
 
-// Tipos de datos primitivos
-valor = 'Cadena de texto';
-valor = 20;
-valor = true;
-valor = null;
-valor = undefined;
-valor = Symbol('Simbolo');
+console.log(numero1 < numero2);
 
-// Tipos de dato por referencia
-valor = { nombre: 'tony', apellido: 'ojeda' };
-valor = [1, 2, 3, 4];
-valor = new Date();
+// comparador igual 
+console.log(20 == '20'); // true
+console.log(20 === '20'); // Operador estricto revisa el valor y el tipo de dato  : false
 
-console.log(typeof valor);
+console.log(2 != 3);
+console.log('z' > 'A');
+console.log(null == undefined); // true
+console.log(null === undefined); // false
