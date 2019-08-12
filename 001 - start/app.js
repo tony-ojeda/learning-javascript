@@ -1,16 +1,25 @@
-// functions in js
+// functions in 3s
 
-let nombre, mensaje;
+const numero1 = 30,
+    numero2 = 20,
+    numero3 = 20.20,
+    numero4 = .1020,
+    numero5 = -3;
 
-nombre = "tony";
-mensaje = "Estoy aprendiendo JS "
+let resultado;
 
-console.log(nombre.length);
-console.log(nombre.toUpperCase()); // Convierte a mayuscula
-console.log(nombre.toLowerCase()); //  Convierte a minuscula
-console.log(mensaje.substring(6, 10)); // muestra el texto desde , hasta
-console.log(mensaje.slice(6, 10)); // corta  el texto
-console.log(mensaje.split(' ')); // separa el string en arrays, segun el filtro
-console.log(mensaje.replace('JS', 'TypeScript')); // reemplaza un valor especifo de la cadena
-console.log(mensaje.includes('JS')); // permite buscar un dato en especifico (true o false)
-console.log(mensaje.repeat(3)); // repite el dato
+// Valor pi
+resultado = Math.PI;
+
+// redondeo
+resultado = Math.round(2.5); // 2.4 es 2, 2.5 es 3
+resultado = Math.ceil(2.2); // redonde hacia arriba
+resultado = Math.floor(2.2); // redonde hacia abajo
+resultado = Math.sqrt(49); // raiz cuadrada
+resultado = Math.abs(numero5); // retorna el valor absoluto
+resultado = Math.pow(2, 3); // # a la potencia x
+resultado = Math.min(3, 6, 5, 9, 7, 8); // retorna el minimo valor ya sea en decimal
+resultado = Math.max(3, 6, 5, 9, 7, 8); // retorna el maximo valor ya sea en decimal
+resultado = Math.floor(Math.random() * 10);
+
+console.log(resultado);
