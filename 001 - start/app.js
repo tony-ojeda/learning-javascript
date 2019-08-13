@@ -1,34 +1,32 @@
-// conversion de numero a string
+// template lirerals
+const producto1 = 'Pizza',
+    precio1 = 30,
+    producto2 = 'Hamburguesa',
+    precio2 = 40;
 
-let cp;
+let html;
 
-cp = 90210;
-cp = String(cp);
+// forma antigua
+// html = '<ul>' +
+//     '<li>Order: ' + producto1 + '</li>' +
+//     '<li>Precio: ' + precio1 + '</li>' +
+//     '<li>Orden: ' + producto2 + '</li>' +
+//     '<li>Precio: ' + precio2 + '</li>' +
+//     '</ul>';
 
-//console.log(cp.length);
+// forma nueva
+html = `
+       <ul>
+        <li> Order: ${producto1} </li>
+        <li> Precio: ${precio1} </li>
+        <li> Orden: ${producto2} </li>
+        <li> Precio: ${precio2} </li>
+        <li> Total: ${total(precio1,precio2)} </li>
+       </ul>
+       `;
 
-let dato;
+function total(precio1, precio2) {
+    return precio1 + precio2;
+}
 
-dato = '3 ' + '3';
-
-
-// booleanos 
-dato = true;
-
-dato = String(dato);
-
-// de arreglo a string
-dato = [1, 2, 3];
-
-// toString();
-dato = 20;
-dato = true;
-dato = [1, 2, 3];
-dato = undefined;
-dato = null;
-
-dato = dato.toString();
-
-console.log(dato);
-console.log(dato.length);
-console.log(typeof dato);
+document.getElementById('app').innerHTML = html;
