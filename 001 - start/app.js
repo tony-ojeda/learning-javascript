@@ -1,33 +1,34 @@
-// conversion de datos: entero a string
-const numero1 = "50",
-    numero2 = 10,
-    numero3 = 'tres';
+// conversion de numero a string
 
-// console.log(Number(numero1) + numero2);  // realiza la suma normal
-// console.log(parseInt(numero1) + numero2); // realiza la suma normal
-// console.log(numero1 - numero2); // si resta sin ningun problema
-//console.log(object);
+let cp;
+
+cp = 90210;
+cp = String(cp);
+
+//console.log(cp.length);
 
 let dato;
-dato = Number("20");
-dato = Number("20.10951");
-dato = Number(true);
-dato = Number(false);
-dato = Number(null);
-dato = Number(undefined);
-dato = Number('Hola mundo');
-dato = Number([1, 2, 3, 4]);
 
-// ParseFloar y ParseInt
-dato = parseInt('100');
-dato = parseFloat('100');
-dato = parseInt('100.2030');
+dato = '3 ' + '3';
 
-// toFixed
-dato = 1384343;
-console.log(dato.toFixed(2));
+
+// booleanos 
+dato = true;
+
+dato = String(dato);
+
+// de arreglo a string
+dato = [1, 2, 3];
+
+// toString();
+dato = 20;
+dato = true;
+dato = [1, 2, 3];
+dato = undefined;
+dato = null;
+
+dato = dato.toString();
 
 console.log(dato);
-
-
-// NaN: no es dato numerico
+console.log(dato.length);
+console.log(typeof dato);
