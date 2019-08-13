@@ -1,16 +1,33 @@
-// Operadores de comparación
+// conversion de datos: entero a string
+const numero1 = "50",
+    numero2 = 10,
+    numero3 = 'tres';
 
-const numero1 = 20;
-const numero2 = 50;
-const numero3 = '20';
+// console.log(Number(numero1) + numero2);  // realiza la suma normal
+// console.log(parseInt(numero1) + numero2); // realiza la suma normal
+// console.log(numero1 - numero2); // si resta sin ningun problema
+//console.log(object);
 
-console.log(numero1 < numero2);
+let dato;
+dato = Number("20");
+dato = Number("20.10951");
+dato = Number(true);
+dato = Number(false);
+dato = Number(null);
+dato = Number(undefined);
+dato = Number('Hola mundo');
+dato = Number([1, 2, 3, 4]);
 
-// comparador igual 
-console.log(20 == '20'); // true
-console.log(20 === '20'); // Operador estricto revisa el valor y el tipo de dato  : false
+// ParseFloar y ParseInt
+dato = parseInt('100');
+dato = parseFloat('100');
+dato = parseInt('100.2030');
 
-console.log(2 != 3);
-console.log('z' > 'A');
-console.log(null == undefined); // true
-console.log(null === undefined); // false
+// toFixed
+dato = 1384343;
+console.log(dato.toFixed(2));
+
+console.log(dato);
+
+
+// NaN: no es dato numerico
