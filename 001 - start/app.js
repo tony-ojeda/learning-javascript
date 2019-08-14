@@ -1,5 +1,16 @@
-// IIFE
+// Métodos de propiedad
+// Cuando una función se pone dentro de un objeto
 
-(function(lenguaje) {
-    console.log(`Aprendiendo ${lenguaje}`);
-})('JS');
+const musica = {
+    reproducir: function() {
+        console.log(`Repoduciendo Música`);
+    },
+    pausar: function() {
+        console.log(`Pause a la música`);
+    }
+}
+
+musica.borrar = function(id) {
+    console.log(`Borrando la canción con el ID: ${id}`);
+}
+musica.borrar();
