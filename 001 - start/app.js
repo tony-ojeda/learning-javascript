@@ -1,16 +1,18 @@
-// Métodos de propiedad
-// Cuando una función se pone dentro de un objeto
-
-const musica = {
-    reproducir: function() {
-        console.log(`Repoduciendo Música`);
-    },
-    pausar: function() {
-        console.log(`Pause a la música`);
-    }
+try {
+    algo();
+} catch (error) {
+    console.log(error);
+} finally {
+    console.log('No le importa, ejecuto de todos modos');
 }
 
-musica.borrar = function(id) {
-    console.log(`Borrando la canción con el ID: ${id}`);
+obtenerClientes();
+
+
+function obtenerClientes() {
+    console.log('Descargando...');
+
+    setTimeout(function() {
+        console.log('Completo');
+    }, 3000);
 }
-musica.borrar();
