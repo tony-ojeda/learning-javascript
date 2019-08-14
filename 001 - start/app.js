@@ -1,7 +1,5 @@
-// function expression
+// IIFE
 
-const suma = function(a, b) {
-    return a + b;
-}
-
-console.log(suma(1, 3));
+(function(lenguaje) {
+    console.log(`Aprendiendo ${lenguaje}`);
+})('JS');
