@@ -1,18 +1,14 @@
-try {
-    algo();
-} catch (error) {
-    console.log(error);
-} finally {
-    console.log('No le importa, ejecuto de todos modos');
-}
+// Objeto Date JD
+const diaHoy = new Date();
 
-obtenerClientes();
+let mes = diaHoy.getMonth(); // init 0 - 11
+let dia = diaHoy.getDate();
+let año = diaHoy.getFullYear();
+let minuto = diaHoy.getMinutes();
+let hour = diaHoy.getHours();
+let segundo = diaHoy.getTime(); // Milisegundos desde 1978
 
+año = diaHoy.setFullYear(2016);
+año = diaHoy.getFullYear();
 
-function obtenerClientes() {
-    console.log('Descargando...');
-
-    setTimeout(function() {
-        console.log('Completo');
-    }, 3000);
-}
+console.log(año);
