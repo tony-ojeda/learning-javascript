@@ -1,10 +1,14 @@
-//  for continue and breack
+// Recorrer un arreglo con forEach
+const pendientes = ['Tarea', 'Comer', 'Proyecto', 'Aprender JS'];
 
-for (let i = 0; i < 10; i++) {
-    if (i == 5) {
-        console.log(`Estoy en el ${5}`);
-        //continue
-        //break
-    }
-    console.log(i);
+// for comun
+/*
+for (let i = 0; i < pendientes.length; i++) {
+    console.log(pendientes[i]);
 }
+*/
+
+// forEach
+pendientes.forEach(function(pendiente, index) {
+    console.log(`${index + 1} - ${pendiente}`);
+});
