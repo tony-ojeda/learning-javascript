@@ -1,46 +1,29 @@
-// arreglos en js
-const numeros = [10, 20, 30, 50];
-//console.table(numeros);
+// objetos en js
+const persona = {
+    nombre: 'Tony',
+    apellido: 'Ojeda',
+    edad: 10,
+    guapo: true,
+    profesion: 'Ingeniero Software',
+    email: 'tojeda96@gmail.com',
+    amigos: ['saul', 'ludwin', 'inga', 'conde'],
+    hogar: { ciudad: 'Tocache', pais: 'Perú' },
+    nacimiento: function() {
+        return new Date().getFullYear() - 23;
+    }
+};
 
-// Areglo de string (metodo alternativo)
-const meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril');
-//console.log(meses.length);
+//persona.amigos.push('david');
+//console.dir(persona.nacimiento());
 
-// añadir un arreglo
-meses[4] = 'Mayo';
-meses.push('Junio');
+const autos = [
+    { modelo: 'Mustang', motor: 6.2 },
+    { modelo: 'Camaro', motor: 6.1 },
+    { modelo: 'Challenger', motor: 6.3 }
+];
 
-// Añadir al inicio del arreglo
-meses.unshift('Mes 0');
+for (let i = 0; i < autos.length; i++) {
+    console.log(`Mis autos son: ${autos[i].modelo}`);
+}
 
-// Eliminar un elemento ubicado en la ultima posición de un arreglo
-meses.pop();
-
-// Eliminar un elemento ubicado al inicio del arreglo
-meses.shift();
-
-// Eliminar desde un rango en especifico
-meses.splice(2, 1);
-
-// Revertir
-meses.reverse();
-
-// encontrar un elemento en el arreglo
-//console.log(meses.indexOf('Abril'));  // Se puede realizar para buscar en una lista de productos
-
-// unir arreglo con otro
-let arreglo1 = [1, 2, 3],
-    arreglo2 = [4, 5, 6];
-//console.log(arreglo1.concat(arreglo2));
-
-// Ordenar un arreglo
-const frutas = ['Platano', 'Manzana', 'Fresa', 'Naranja', 'Anis'];
-frutas.sort();
-//console.log(frutas);
-
-// Ordenar numeros
-arreglo1 = [3, 9, 91, 92, 23, 45, 21, 56, 1, 100, 10];
-arreglo1.sort(function(x, y) {
-    return x - y; // menor a mayo    return y - x; de mayor a menor
-});
-console.table(arreglo1);
+console.dir(autos);
