@@ -1,14 +1,10 @@
-// Objeto Date JD
-const diaHoy = new Date();
+//  for continue and breack
 
-let mes = diaHoy.getMonth(); // init 0 - 11
-let dia = diaHoy.getDate();
-let año = diaHoy.getFullYear();
-let minuto = diaHoy.getMinutes();
-let hour = diaHoy.getHours();
-let segundo = diaHoy.getTime(); // Milisegundos desde 1978
-
-año = diaHoy.setFullYear(2016);
-año = diaHoy.getFullYear();
-
-console.log(año);
+for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        console.log(`Estoy en el ${5}`);
+        //continue
+        //break
+    }
+    console.log(i);
+}
