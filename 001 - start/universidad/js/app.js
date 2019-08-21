@@ -1,13 +1,27 @@
-// query selector
-// usas la misma sinstaxis de css
-// Tambien puede seleccionar clases, de devuelve la primera clase que encuentra
+// Selección de multiples elementos
+// let enlaces = document.getElementsByClassName('enlace')[3];
 
-const encabezado = document.querySelector('#encabezado');
+// // CSS
+// enlaces.style.background = '#333';
+// enlaces.textContent = 'Nuevo enlace';
 
-// Aplicar CSS
-encabezado.style.background = '#333';
-encabezado.style.color = '#fff';
-encabezado.style.padding = '20px';
-encabezado.textContent = 'Los mejores cursos';
+// console.log(enlaces);
 
-console.log(encabezado);
+
+// Combinando Query Selector
+// const listaEnlaces = document.querySelector('#principal')
+//     .getElementsByClassName('enlace');
+
+// console.log(listaEnlaces);
+
+
+// Obteniendo Elementos por nombre etiquetas
+const links = document.getElementsByTagName('a');
+// links[18].style.color = 'red';
+// links[18].textContent = 'Nuevo enlace';
+// console.log(links);
+
+let enlaces = Array.from(links);
+enlaces.forEach(function(enlace) {
+    console.log(enlace.textContent);
+});
