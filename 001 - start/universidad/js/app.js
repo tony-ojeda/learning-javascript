@@ -1,8 +1,12 @@
-// selección multiple con querySelector
-const enlaces = document.querySelectorAll('#principal a:nth-child(odd)');
-enlaces.forEach(function(impares) {
-    impares.style.backgroundColor = 'red';
-    impares.style.color = 'white';
-});
+// Traversing  Padre - Hijo
+// Nos permite recorrer todo los nodos del DOM (adelante, atras, saltos)
 
-console.log(enlaces);
+const barra = document.querySelector('barra');
+console.log(barra.children[0].children[0].children);
+
+// 1 = Elementos
+// 2 = Atributos
+// 3 = Text Node
+// 8 = Comentarios
+// 9 = Documentos
+// 10 = Doctype
