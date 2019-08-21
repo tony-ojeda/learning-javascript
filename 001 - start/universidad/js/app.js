@@ -1,12 +1,13 @@
-// Traversing  Padre - Hijo
+// Traversing  Hijo - padre
 // Nos permite recorrer todo los nodos del DOM (adelante, atras, saltos)
 
-const barra = document.querySelector('barra');
-console.log(barra.children[0].children[0].children);
+// const enlaces = document.querySelectorAll('.enlace');
 
-// 1 = Elementos
-// 2 = Atributos
-// 3 = Text Node
-// 8 = Comentarios
-// 9 = Documentos
-// 10 = Doctype
+
+// console.log(enlaces[0].parentElement.parentElement.parentElement);
+
+
+const enlaces = document.querySelectorAll('.enlace');
+
+
+console.log(enlaces[0].nextElementSibling.nextElementSibling.parentElement.children[4]);
