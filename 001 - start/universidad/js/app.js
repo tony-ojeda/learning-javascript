@@ -1,16 +1,17 @@
-const enlace = document.createElement('a');
+// Reemplazar elementos
+const nuevoEncabezado = document.createElement('h2');
 
-// agregamos una clase
-enlace.className = 'enlace';
-// añadir id
-enlace.id = 'nuevo-id';
-// añadir atributo href
-enlace.setAttribute = 'Nuevo Enlace';
-// Añadir texto
-enlace.textContent = "Nuevo Enlace";
-//enlace.appendChild(document.createTextNode('Nuevo Enlace'));
+// agregar un id
+nuevoEncabezado.id = 'encabezado';
 
-// Añadir al HTML
-document.querySelector('#secundaria').appendChild(enlace);
+// agregar nuevo texto
+nuevoEncabezado.appendChild(document.createTextNode('Los Mejores Cursos'));
 
-console.log(enlace);
+// Elemento anterior (sera reemplazado)
+const anterior = document.querySelector('#encabezado');
+
+// Elemento padre
+const elPadre = document.querySelector('#lista-cursos');
+
+// Reemplazar
+elPadre.replaceChild(nuevoEncabezado, anterior);
