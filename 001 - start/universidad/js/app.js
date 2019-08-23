@@ -1,17 +1,26 @@
-// Reemplazar elementos
-const nuevoEncabezado = document.createElement('h2');
+// Elminar elementos
+const enlaces = document.querySelectorAll('.enlace');
+const navegacion = document.querySelector('#principal');
 
-// agregar un id
-nuevoEncabezado.id = 'encabezado';
+//navegacion.removeChild(enlaces[0])
+enlaces[0].remove();
 
-// agregar nuevo texto
-nuevoEncabezado.appendChild(document.createTextNode('Los Mejores Cursos'));
+// Obtener enlaces
+const primerLi = document.querySelector('.enlace');
 
-// Elemento anterior (sera reemplazado)
-const anterior = document.querySelector('#encabezado');
+let elemento;
 
-// Elemento padre
-const elPadre = document.querySelector('#lista-cursos');
+// obtener una clase de CSS
+elemento = primerLi.className;
+elemento = primerLi.classList.add('nueva-clase');
+elemento = primerLi.classList.remove('nueva-clase');
+elemento = primerLi.classList;
 
-// Reemplazar
-elPadre.replaceChild(nuevoEncabezado, anterior);
+// Atributos
+elemento = primerLi.getAttribute('href');
+primerLi.setAttribute('href', 'httt://facebook.com');
+primerLi.setAttribute('data-id', 20);
+elemento = primerLi.hasAttribute('data-id'); // verifica si el atributo existe
+primerLi.removeAttribute('data-id');
+
+elemento = primerLi;
