@@ -1,13 +1,16 @@
-// Traversing  Hijo - padre
-// Nos permite recorrer todo los nodos del DOM (adelante, atras, saltos)
+const enlace = document.createElement('a');
 
-// const enlaces = document.querySelectorAll('.enlace');
+// agregamos una clase
+enlace.className = 'enlace';
+// añadir id
+enlace.id = 'nuevo-id';
+// añadir atributo href
+enlace.setAttribute = 'Nuevo Enlace';
+// Añadir texto
+enlace.textContent = "Nuevo Enlace";
+//enlace.appendChild(document.createTextNode('Nuevo Enlace'));
 
+// Añadir al HTML
+document.querySelector('#secundaria').appendChild(enlace);
 
-// console.log(enlaces[0].parentElement.parentElement.parentElement);
-
-
-const enlaces = document.querySelectorAll('.enlace');
-
-
-console.log(enlaces[0].nextElementSibling.nextElementSibling.parentElement.children[4]);
+console.log(enlace);
