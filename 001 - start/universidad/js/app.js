@@ -1,13 +1,10 @@
-// Delegation
-document.body.addEventListener('click', eliminarElemento);
+// Agregar a Local Storage
+localStorage.setItem('nombre', 'Tony Manuel');
+// localStorage.removeItem('nombre');
+// localStorage.clear(); limpia toda la información
+const nombre = localStorage.getItem('nombre');
 
-function eliminarElemento(event) {
-    event.preventDefault();
+// Session Storage
+sessionStorage.setItem('nombre', 'Tony Manuel');
 
-    if (event.target.classList.contains('borrar-curso')) {
-        console.log(event.target.parentElement.parentElement.remove());
-    }
-    if (event.target.classList.contains('agregar-carrito')) {
-        console.log('Curso Agregado');
-    }
-}
+console.log(nombre);
