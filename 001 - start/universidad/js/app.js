@@ -1,36 +1,32 @@
-// variables
-const encabezado = document.querySelector('#encabezado');
-const enlaces = document.querySelectorAll('.enlace');
-const boton = document.querySelector('#vaciar-carrito');
+// Eventos Teclado
+const busqueda = document.querySelector('#buscador');
 
-// Click
-//boton.addEventListener('click', obtenerEvento);
+// keydown: Se activa el evento por cualquier cambio
+// busqueda.addEventListener('keydown', obtenerEvento);
 
-// Doble Click
-// boton.addEventListener('dblClick', obtenerEvento);
+// keyup: Se activa el evento por cada vez aue sueltas la tecla
+// busqueda.addEventListener('keyup', obtenerEvento);
 
-// Mouse Enter: Se activa el evento cuando el cursor se acerca al elemento escogido
-// boton.addEventListener('mouseenter', obtenerEvento);
+// keypress: Evento se activa por cada tecla presionada
+//busqueda.addEventListener('keypress', obtenerEvento);
 
-// Moouse Leave: Se activa el evento cuando el cursor se retira del elemento
-// boton.addEventListener('mouseleave', obtenerEvento);
+// focus: Se activa el evento cuando el elemento este apuntado o enfocado
+// busqueda.addEventListener('focus', obtenerEvento);
 
-// Mouse Over: Se activa el evento cuando el cursor esta sobre el elemento
-//boton.addEventListener('mouseover', obtenerEvento);
+// blur: Se activa cuando pierdes el enfoque del elemento previo
+// busqueda.addEventListener('blur', obtenerEvento);
 
-// Mouse Out: Similar a mouse leave
-// boton.addEventListener('mouseleave', obtenerEvento);
+// cut: cortar
+// busqueda.addEventListener('cut', obtenerEvento);
 
-//Mouse Down: Similar mouse enter
-// boton.addEventListener('mousedown', obtenerEvento);
+// copy: copiar
+// busqueda.addEventListener('copy', obtenerEvento);
 
-// Mouse Up: Se activa el evento cuando despues de un click, sueltas el click
-// boton.addEventListener('mouseup', obtenerEvento);
-
-// Mouse Move: Se activa por cualquier movimiento del cursor dentro del elemento
-encabezado.addEventListener('mousemove', obtenerEvento);
+// input: Captura todos los eventos ya antes mecionados
+busqueda.addEventListener('input', obtenerEvento);
 
 
 function obtenerEvento(event) {
+    document.querySelector('#encabezado').innerText = busqueda.value;
     console.log(`EVENTO: ${event.type}`);
 }
