@@ -1,20 +1,13 @@
-// Event Bubbling
+// Delegation
+document.body.addEventListener('click', eliminarElemento);
 
-const card = document.querySelector('.card');
-const infoCurso = document.querySelector('.info-card');
-const agregarCarrito = document.querySelector('.agregar-carrito');
+function eliminarElemento(event) {
+    event.preventDefault();
 
-card.addEventListener('click', function(event) {
-    console.log('Click en Card');
-    event.stopPropagation();
-});
-
-infoCurso.addEventListener('click', function(event) {
-    console.log('Click en Info Curso');
-    event.stopPropagation();
-});
-
-agregarCarrito.addEventListener('click', function(event) {
-    console.log('Click en Agregar a Carrito');
-    event.stopPropagation();
-});
+    if (event.target.classList.contains('borrar-curso')) {
+        console.log(event.target.parentElement.parentElement.remove());
+    }
+    if (event.target.classList.contains('agregar-carrito')) {
+        console.log('Curso Agregado');
+    }
+}
