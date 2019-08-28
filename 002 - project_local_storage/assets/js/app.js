@@ -18,6 +18,10 @@ function eventListeners() {
 function agregarTweet(e) {
     e.preventDefault(); // evita que el atributo action,href por defecto se active
     // leer el varlo del textarea
-    const twwet = document.getElementById('tweet').value;
-    console.log(twwet);
+    const tweet = document.getElementById('tweet').value;
+
+    // Crear elemento y añadirle el contenido a la lista
+    const li = document.createElement('li');
+    li.innerText = tweet;
+    listaTweets.appendChild(li);
 }
