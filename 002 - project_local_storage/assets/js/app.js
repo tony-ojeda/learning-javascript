@@ -20,8 +20,16 @@ function agregarTweet(e) {
     // leer el varlo del textarea
     const tweet = document.getElementById('tweet').value;
 
+    // crear boton eleminar
+    const botonBorrar = document.createElement('a');
+    botonBorrar.classList = 'borrar-tweet';
+    botonBorrar.innerText = 'X';
+
     // Crear elemento y añadirle el contenido a la lista
     const li = document.createElement('li');
     li.innerText = tweet;
+    // añade el botón de borrar a la lista
+    li.appendChild(botonBorrar);
+    // añade el tweet a la lista
     listaTweets.appendChild(li);
 }
