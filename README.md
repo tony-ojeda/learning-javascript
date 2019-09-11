@@ -7,7 +7,7 @@ Ejemplo:
 
 Supongamos que ha recibido una matriz que contiene varios objetos, cada uno de los cuales representa a una persona. Sin embargo, lo que realmente necesita al final es una matriz que contenga solo la identificación de cada persona
 
-::: js
+:::js
 // What you have
 var officers = [
   { id: 20, name: 'Captain Piett' },
