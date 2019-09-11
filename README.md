@@ -9,6 +9,10 @@ Supongamos que ha recibido una matriz que contiene varios objetos, cada uno de l
 
 :::js
 
+<script type="text/javascript">
+  document.write("¡Hola, mundo!");
+</script>
+
 // What you have
 var officers = [
   { id: 20, name: 'Captain Piett' },
