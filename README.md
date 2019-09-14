@@ -4,7 +4,7 @@ these are some of the most used methods
 
 ## MAP
 concept:
-
+![Proceso del Map()](https://miro.medium.com/max/1257/1*4EGwsCicbWJeml2aAm714A.gif)
 Syntax:
 
 Example:
@@ -49,6 +49,7 @@ console.log(officersIds);  // we obtains [20, 24, 56, 88]
 concept:
 
 The `reduce()` method is used to apply a function to each element in the array to reduce the array to a single value.
+![Proceso del Map()](https://miro.medium.com/max/1257/1*dhTC_FFgiH3mKROrnDj12w.gif)
 
 Syntax:
 ```js
@@ -106,7 +107,7 @@ var mostExpPilot = pilots.reduce(function (oldest, pilot) {
 
 ## FILTER
 concept
-
+![Proceso del Map()](https://miro.medium.com/max/1257/1*TOPYVvfMBmjajPh-fqZ9GQ.gif)
 Syntax
 
 Example:
@@ -159,6 +160,48 @@ const empire = pilots.filter(pilot => pilot.faction === "Empire");
 console.log('These are the rebels',rebels);
 console.log('these are the imperial ones',empire);
 ```
+
+a much more practical case
+
+```js
+data = [
+  {
+    name: 'Butters',
+    age: 3,
+    type: 'dog'
+  },
+  {
+    name: 'Lizzy',
+    age: 6,
+    type: 'dog'
+  },
+  {
+    name: 'Red',
+    age: 1,
+    type: 'cat'
+  },
+  {
+    name: 'Joey',
+    age: 3,
+    type: 'dog'
+  },
+];
+```
+**The goal is going to be to write some JavaScript that will sum all of the dogs ages in dog years.**
+
+```js
+let ages = data
+  .filter((animal) => {
+    return animal.type === 'dog';
+}).map((animal) => {
+    return animal.age * 7
+}).reduce((sum, animal) => {
+    return sum + animal;
+},0);
+console.log(ages)// ages = 84
+```
+
+
 
 ## ENLACES
 * [Simplify your JavaScript – Use .map(), .reduce(), and .filter()](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d)
