@@ -106,10 +106,8 @@ function borrarTweetLocalStorage(tweet) {
     tweets = obtenerTweetsLocalStorage();
 
     tweets.forEach((tweet, index) => {
-        if (tweetBorrar === tweet) {
-            tweets.splice(index, 1);
-        }
-    });
+        if (tweetBorrar === tweet)  tweets.splice(index, 1);                
+    });        
 
     localStorage.setItem('tweets', JSON.stringify(tweets));
 }
