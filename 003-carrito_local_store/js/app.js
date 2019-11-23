@@ -53,6 +53,7 @@ function insertarCarrito(curso) {
         <td><a href="#" class="borrar-curso" data-id="${curso.id}">X</td>
     `;
     listaCursos.appendChild(row);
+    guardarCursoLocalStorage(curso);
 }
 
 // Elimina el curso del carrito
@@ -74,4 +75,27 @@ function vaciarCarrito() {
         listaCursos.removeChild(listaCursos.firstChild);
     }
     return false;
+}
+
+// Almacena carrito en el carrito a Local Storage
+function guardarCursoLocalStorage(curso) {
+    let cursos;
+    // Toma el valor de un areglo con datos de LS o vacio
+    cursos = obtenerCursosLocalStorage();
+    // el curso seleccionado se agrega al arreglo
+    cursos.push(curso);
+    localStorage.setItem('cursos', JSON.stringify(cursos));
+}
+
+// Comprueba que hata elementos en Local Storage
+function obtenerCursosLocalStorage() {
+    let cursosLS;
+
+    // comprobamos si hay algo en localStorage
+    if (localStorage.getItem('cursos') === null) {
+        cursosLS = [];
+    } else {
+        cursosLS = JSON.parse(localStorage.getItem('cursos'));
+    }
+    return cursosLS;
 }
