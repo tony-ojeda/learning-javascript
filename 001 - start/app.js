@@ -1,11 +1,10 @@
-// Object literal
-
-const cliente = {
-    nombre: 'Juan',
-    saldo: 200,
-    tipoCliente: () => {
+// Metodo alternativo
+function Cliente(nombre, saldo) {
+    this.nombre = nombre;
+    this.saldo = saldo;
+    this.tipoCliente = () => {
         let tipo;
-        if (this.saldo > 1000) {
+        if (this.saldo > 2000) {
             tipo = 'Gold';
         } else if (this.saldo > 500) {
             tipo = 'Platinum';
@@ -16,4 +15,6 @@ const cliente = {
     }
 }
 
-console.log(cliente.tipoCliente());
+const persona = new Cliente('Pedro', 2000);
+
+console.log(persona.tipoCliente());
