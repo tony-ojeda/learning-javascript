@@ -8,11 +8,16 @@ const btnEnviar = document.getElementById('enviar');
 eventListeners();
 
 function eventListeners() {
+    // Inicio de la aplicación y deshabilitar submit
     document.addEventListener('DOMContentLoaded', inicioApp);
+
     // campos del formulario
     email.addEventListener('blur', validarCampo);
     asunto.addEventListener('blur', validarCampo);
     mensaje.addEventListener('blur', validarCampo);
+
+    // Boton de enviar en el submit
+    btnEnviar.addEventListener('click', enviarEmail);
 }
 
 // funciones
@@ -38,6 +43,31 @@ function validarCampo() {
     }
 }
 
+// Cuando se envia el correo
+function enviarEmail(e) {
+    // Spinner al presionar Enviar
+    const spinnerGif = document.querySelector('#spinner');
+    spinnerGif.style.display = 'block';
+
+    // Gif que enviar email
+    const enviado = document.createElement('img');
+    enviado.src = 'img/mail.gif';
+    enviado.style.display = 'block';
+
+    // Ocultar Spinner y mostrar gif de enviado
+    setTimeout(() => {
+        spinnerGif.style.display = 'none';
+
+        document.querySelector('#loaders').appendChild(enviado);
+        setTimeout(() => {
+            enviado.remove();
+        }, 5000);
+    }, 3000);
+
+    e.preventDefault();
+}
+
+// Verificar la longitud del texto en los campos
 function validarLongitud(campo) {
     if (campo.value.length > 0) {
         campo.style.borderBottomColor = 'green';
