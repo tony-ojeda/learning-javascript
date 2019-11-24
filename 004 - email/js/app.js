@@ -3,6 +3,8 @@ const email = document.getElementById('email');
 const asunto = document.getElementById('asunto');
 const mensaje = document.getElementById('mensaje');
 const btnEnviar = document.getElementById('enviar');
+const resetBtn = document.getElementById('resetBtn');
+const formularioEnviar = document.getElementById('enviar-mail');
 
 // event listener
 eventListeners();
@@ -18,6 +20,9 @@ function eventListeners() {
 
     // Boton de enviar en el submit
     btnEnviar.addEventListener('click', enviarEmail);
+
+    // Boton de reset
+    resetBtn.addEventListener('click', resetFormulario);
 }
 
 // funciones
@@ -41,6 +46,12 @@ function validarCampo() {
     if (email.value !== '' && asunto.value !== '' && mensaje.value !== '') {
         if (errores.length === 0) btnEnviar.disabled = false;
     }
+}
+
+// Resetear el formulario
+function resetFormulario(e) {
+    formularioEnviar.reset();
+    e.preventDefault();
 }
 
 // Cuando se envia el correo
