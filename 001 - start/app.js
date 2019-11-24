@@ -1,25 +1,18 @@
-function Cliente(nombre, saldo) {
-    this.nombre = nombre;
-    this.saldo = saldo;
+// Object Create 
+const Cliente = {
+    imprimirSaldo: function() {
+        return `hola ${this.nombre} tu saldo es ${this.saldo}`;
+    },
+    retirarSaldo: function(retiro) {
+        return this.saldo -= retiro;
+    }
 }
 
-// Prototipo que imprime saldo y nombre
-Cliente.prototype.nombreClienteSaldo = function() {
-    return `Nombre: ${this.nombre}, Tu saldo es de ${this.saldo}`;
-}
+// Crear el objeto
+const tony = Object.create(Cliente);
+tony.nombre = 'Tony';
+tony.saldo = 500;
 
-const cliente1 = new Cliente('Jose', 100);
+tony.retirarSaldo(200);
 
-console.log(cliente1);
-
-
-// Banca para empresas
-function Empresa(nombre, saldo, telefono, tipo) {
-    Cliente.call(this, nombre, saldo);
-    this.telefono = telefono;
-    this.tipo = tipo;
-}
-
-Empresa.prototype = Object.create(Cliente.prototype);
-const empresa = new Empresa('EDTeam', 100000, 12234234, 'Eduacación');
-console.log(empresa.nombreClienteSaldo());
+console.log(tony.imprimirSaldo());
