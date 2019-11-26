@@ -33,7 +33,7 @@ class Interfaz {
         if (tipo === 'error') {
             divMensaje.classList.add('alert-danger');
         } else {
-            divMensaje.classList.add('alert-sucess');
+            divMensaje.classList.add('alert-success');
         }
         divMensaje.appendChild(document.createTextNode(mensaje));
         // inserter en el DOM
@@ -76,6 +76,7 @@ formulario.addEventListener('submit', (e) => {
         // 2 paramatros: mensaje y tipo
         ui.imprimirMensaje('Hubo un error', 'error');
     } else {
-        console.log('el gasto se agrego');
+        // Insertar en el html
+        ui.imprimirMensaje('Correcto', 'correcto');
     }
 });
