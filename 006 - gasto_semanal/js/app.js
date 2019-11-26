@@ -61,11 +61,27 @@ class Interfaz {
         }
         // Comprueba el presupuesto restante
     presupuestoRestante(cantidad) {
-        const restante = document.querySelector('span#restante');
-        // leemos presupuesto restante
-        const presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidad);
-        restante.innerHTML = `${presupuestoRestanteUsuario}`;
+            const restante = document.querySelector('span#restante');
+            // leemos presupuesto restante
+            const presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidad);
+            restante.innerHTML = `${presupuestoRestanteUsuario}`;
+            this.comprobarPresupuesto();
+        }
+        // cambiar de color el presupuesto restante
+    comprobarPresupuesto() {
+        const presupuestoTotal = cantidadPresupuesto.presupuesto;
+        const presupuestoRestante = cantidadPresupuesto.restante;
 
+        // comprobar el 25%
+        if ((presupuestoTotal / 4) > presupuestoRestante) {
+            const restante = document.querySelector('.restante');
+            restante.classList.remove('alert-success', 'alert-warning');
+            restante.classList.add('alert-danger');
+        } else if ((presupuestoTotal / 2) > presupuestoRestante) {
+            const restante = document.querySelector('.restante');
+            restante.classList.remove('alert-success');
+            restante.classList.add('alert-warning');
+        }
     }
 }
 
