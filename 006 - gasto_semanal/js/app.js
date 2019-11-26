@@ -28,22 +28,36 @@ class Interfaz {
         restanteSpan.innerHTML = `${cantidad}`;
     }
     imprimirMensaje(mensaje, tipo) {
-        const divMensaje = document.createElement('div');
-        divMensaje.classList.add('text-center', 'alert');
-        if (tipo === 'error') {
-            divMensaje.classList.add('alert-danger');
-        } else {
-            divMensaje.classList.add('alert-success');
-        }
-        divMensaje.appendChild(document.createTextNode(mensaje));
-        // inserter en el DOM
-        document.querySelector('.primario').insertBefore(divMensaje, formulario);
+            const divMensaje = document.createElement('div');
+            divMensaje.classList.add('text-center', 'alert');
+            if (tipo === 'error') {
+                divMensaje.classList.add('alert-danger');
+            } else {
+                divMensaje.classList.add('alert-success');
+            }
+            divMensaje.appendChild(document.createTextNode(mensaje));
+            // inserter en el DOM
+            document.querySelector('.primario').insertBefore(divMensaje, formulario);
 
-        // quitar el aler despues de 3s
-        setTimeout(() => {
-            document.querySelector('.primario .alert').remove();
-            formulario.reset();
-        }, 3000);
+            // quitar el aler despues de 3s
+            setTimeout(() => {
+                document.querySelector('.primario .alert').remove();
+                formulario.reset();
+            }, 3000);
+        }
+        // Insertar los gastos a la lista
+    agregarGastoListado(nombre, cantidad) {
+        const gastosListado = document.querySelector('#gastos ul');
+        // crear un li
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        // insertar el gasto
+        li.innerHTML = `
+            ${nombre}
+            <span class="badge badge-primary badge-pill"> S/ ${cantidad} </span>
+        `;
+        // insertar al htmll
+        gastosListado.appendChild(li);
     }
 }
 
@@ -78,5 +92,6 @@ formulario.addEventListener('submit', (e) => {
     } else {
         // Insertar en el html
         ui.imprimirMensaje('Correcto', 'correcto');
+        ui.agregarGastoListado(nombreGasto, cantidadGasto);
     }
 });
