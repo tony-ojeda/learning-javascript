@@ -47,17 +47,25 @@ class Interfaz {
         }
         // Insertar los gastos a la lista
     agregarGastoListado(nombre, cantidad) {
-        const gastosListado = document.querySelector('#gastos ul');
-        // crear un li
-        const li = document.createElement('li');
-        li.className = 'list-group-item d-flex justify-content-between align-items-center';
-        // insertar el gasto
-        li.innerHTML = `
+            const gastosListado = document.querySelector('#gastos ul');
+            // crear un li
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            // insertar el gasto
+            li.innerHTML = `
             ${nombre}
             <span class="badge badge-primary badge-pill"> S/ ${cantidad} </span>
         `;
-        // insertar al htmll
-        gastosListado.appendChild(li);
+            // insertar al htmll
+            gastosListado.appendChild(li);
+        }
+        // Comprueba el presupuesto restante
+    presupuestoRestante(cantidad) {
+        const restante = document.querySelector('span#restante');
+        // leemos presupuesto restante
+        const presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidad);
+        restante.innerHTML = `${presupuestoRestanteUsuario}`;
+
     }
 }
 
@@ -93,5 +101,6 @@ formulario.addEventListener('submit', (e) => {
         // Insertar en el html
         ui.imprimirMensaje('Correcto', 'correcto');
         ui.agregarGastoListado(nombreGasto, cantidadGasto);
+        ui.presupuestoRestante(cantidadGasto);
     }
 });
