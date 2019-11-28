@@ -5,17 +5,20 @@ function cargarDatos() {
     const xhr = new XMLHttpRequest();
 
     // Abrir una conexión
-    xhr.open('GET', 'datos.txt');
+    xhr.open('GET', 'datos.txt', true);
 
     // una vez que carga
-    xhr.onload = () => {
+    xhr.onreadystatechange = () => {
             /**
-             * 200 : correcto
-             * 403 : prohibido
-             * 404 : no encontrado
+             * ready status
+             * 0 : no inicializada
+             * 1 : conexión establecida
+             * 2 : Recibido
+             * 3 : Procesado
+             * 4 : Respuesta lista
              */
-            if (xhr.status === 200) {
-                console.log(this.responseText);
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('listado').innerHTML = `<h1>${xhr.responseText}<h1>`;
             }
         }
         // Enviar el request

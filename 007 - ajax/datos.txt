@@ -1,1 +1,1 @@
-sInformacion desde un archivo .txt
+Informacion desde un archivo .txt
