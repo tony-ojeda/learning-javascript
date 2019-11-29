@@ -1,21 +1,15 @@
-const paises = ['Francia', 'España', 'Portugal', 'Australia', 'Inglaterra', 'Irlanda'];
+// Prmises 
+const aplicarDescuento = new Promise((resolve, reject) => {
+    const descuento = false;
+    if (descuento) {
+        resolve('Descuento Aplicado');
+    } else {
+        reject('No se puede aplicar descuento');
+    }
+});
 
-function nuevoPais(nuevo, callback) {
-    setTimeout(() => {
-        paises.push(nuevo);
-        callback();
-    }, 3000)
-}
-
-function mostrarPaises() {
-    setTimeout(() => {
-        let html = '';
-        paises.forEach((pais) => {
-            html += `<li>${pais}</li>`;
-        })
-        document.getElementById('app').innerHTML = html;
-    }, 1000);
-}
-
-nuevoPais('Perú', mostrarPaises);
-mostrarPaises();
+aplicarDescuento.then((resultado) => {
+    console.log(resultado);
+}).catch((error) => {
+    console.log(error);
+})
