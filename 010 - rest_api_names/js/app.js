@@ -29,29 +29,43 @@ function cargarNombres(e) {
     }
     // conectar con ajax
     // iniciar XMLHTTPRequest
-    const xhr = new XMLHttpRequest();
-    // abrimos la conexión
-    xhr.open('GET', url, true);
-    // datos e imiprimimos del template
-    xhr.onload = () => {
-            if (xhr.status === 200) {
-                const nombres = JSON.parse(xhr.responseText);
-                // generar html
-                let htmlNombres = '<h2>Nombres generados</h2>';
-                htmlNombres += '<ul class="lista">';
+    // const xhr = new XMLHttpRequest();
+    // // abrimos la conexión
+    // xhr.open('GET', url, true);
+    // // datos e imiprimimos del template
+    // xhr.onload = () => {
+    //         if (xhr.status === 200) {
+    //             const nombres = JSON.parse(xhr.responseText);
+    //             // generar html
+    //             let htmlNombres = '<h2>Nombres generados</h2>';
+    //             htmlNombres += '<ul class="lista">';
 
-                // imprimir cada nombre
-                nombres.forEach(nombre => {
-                    htmlNombres += `
-                        <li>${nombre.name}
-                    `;
-                });
+    //             // imprimir cada nombre
+    //             nombres.forEach(nombre => {
+    //                 htmlNombres += `
+    //                     <li>${nombre.name}
+    //                 `;
+    //             });
 
-                htmlNombres += '</ul>';
-                document.getElementById('resultado').innerHTML = htmlNombres;
-            }
-        }
-        // enviar el request
-    xhr.send();
+    //             htmlNombres += '</ul>';
+    //             document.getElementById('resultado').innerHTML = htmlNombres;
+    //         }
+    //     }
+    //     // enviar el request
+    // xhr.send();
+
+    // Crear Fetch
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            let html = `<h2> Nombres Generados</h2>`;
+            html += `<ul class"lista">`;
+            data.forEach(nombre => {
+                html += `<li>${nombre.name}</li>`;
+            })
+            html += `</ul>`;
+            document.querySelector('#resultado').innerHTML = html;
+        })
+        .catch(error => console.log(error))
 
 }
