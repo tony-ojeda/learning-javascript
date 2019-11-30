@@ -1,23 +1,11 @@
-// Async Await
-async function obtenerClientes() {
-    // crear un pomise
-    const clientes = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Clientes descargados...');
-        }, 5000)
-    });
+async function leerTodos() {
+    // esperar la respuesta
+    const respuesta = await fetch('https://jsonplaceholder.typicode.com/todos');
 
-    // error o no...
-    const error = false;
-
-    if (!error) {
-        const respuesta = await clientes;
-        return respuesta;
-    } else {
-        await Promise.reject('Hubo un error...');
-    }
+    // procede cuando la respuesta este hecha
+    const datos = await respuesta.json();
+    return datos;
 }
 
-obtenerClientes()
-    .then(res => console.log(res))
-    .catch(error => console.log(error))
+leerTodos()
+    .then(usuarios => console.log(usuarios));
