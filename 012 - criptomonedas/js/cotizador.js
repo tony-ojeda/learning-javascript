@@ -8,4 +8,14 @@ class Cotizador {
 
         return { monedas }
     }
+
+    async obtenerValores(moneda, criptomoneda) {
+        // convierte los selets en la URL
+        const urlConvertir = await fetch(`http://api.coinmarketcap.com/v1/ticker/${criptomoneda}/convert=${criptomoneda}`);
+        const resultado = await urlConvertir.json();
+
+        return {
+            resultado
+        }
+    }
 }

@@ -17,8 +17,13 @@ formulario.addEventListener('submit', e => {
 
     // comprobar que ambos campos tegand datos:
     if (monedaSeleccionada === '' || criptoMonedaSeleccionada === '') {
-        console.log('Faltan datos');
+        // Faltan datos, imprimir alert
+        ui.mostrarMensaje('Ambos campos son obligatorios', 'deep-orange darken-4 card-panel');
     } else {
-        console.log('cotizar');
+        // Todo correcto, tomar valores del select y ejecutar
+        cotizador.obtenerValores(monedaSeleccionada, criptoMonedaSeleccionada)
+            .then(data => {
+                console.log(data.resutado);
+            })
     }
 })
