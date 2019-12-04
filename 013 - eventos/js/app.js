@@ -15,8 +15,10 @@ document.getElementById('buscarBtn').addEventListener('click', e => {
 
     // revisar que haya algo escrito en el buscador
     if (textoBuscador !== '') {
+
         console.log('Buscando');
     } else {
-        console.log('no hay nada');
+        // mostrar mensaje para que imprima algo
+        ui.mostrarMensaje('Escribe algo en el buscador', 'alert alert-danger mt-4');
     }
 })
