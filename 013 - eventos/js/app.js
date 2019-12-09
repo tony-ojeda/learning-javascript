@@ -15,8 +15,15 @@ document.getElementById('buscarBtn').addEventListener('click', e => {
 
     // revisar que haya algo escrito en el buscador
     if (textoBuscador !== '') {
-
-        console.log('Buscando');
+        // cuando si hay una busqueda
+        eventbrite.obtenerEventos(textoBuscador, categoriaSeleccionada)
+            .then(eventos => {
+                if (eventos.eventos.events.length > 0) {
+                    console.log('Si hat eventos');
+                } else {
+                    console.log('no hay');
+                }
+            })
     } else {
         // mostrar mensaje para que imprima algo
         ui.mostrarMensaje('Escribe algo en el buscador', 'alert alert-danger mt-4');
