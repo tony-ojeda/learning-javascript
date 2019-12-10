@@ -1,9 +1,57 @@
 @import './modules/_variables.scss';
 @import './modules/_mixins.scss';
-body {}
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap');
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0px;
+}
 
 img {
     max-width: 100%;
+}
+
+figure {
+    position: relative;
+    max-height: 100%;
+    margin: 0px;
+    figcaption {
+        padding: $large-padding;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2em;
+        position: absolute;
+        letter-spacing: 5px;
+        width: auto;
+        bottom: 0px;
+        left: 10px;
+        z-index: 10;
+        @include text-center;
+        color: rgba($white, 0.5);
+    }
+}
+
+.btn {
+    padding: $large-padding;
+    position: relative;
+    color: $black !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        bottom: 0px;
+        height: 40%;
+        z-index: -1;
+        background-color: $light-blue;
+        transition: all 0.15s ease-out;
+    }
+    &:hover::before {
+        height: 100%;
+    }
 }
 
 .grid {
@@ -11,18 +59,26 @@ img {
     grid-template-columns: repeat(12, 1fr);
 }
 
-.main-text {
-    grid-area: title;
-}
-
-.main-image {
-    grid-area: image;
-}
-
 .grid-main-area {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
+    margin-top: $big-margin-top;
     grid-template-areas: "title title title title title title title title title" "image image image image image image image image image";
+    .text {
+        font-weight: 200;
+        grid-area: title;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        h1 {
+            font-weight: inherit;
+            font-size: $big;
+            letter-spacing: 0.3em;
+            line-height: 1.5em;
+        }
+    }
+    .image {
+        grid-area: image;
+    }
 }
 
 .container {
