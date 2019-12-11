@@ -63,6 +63,7 @@ figure {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     margin-top: $big-margin-top;
+    margin-bottom: $big-margin-top;
     grid-template-areas: "title title title title title title title title title" "image image image image image image image image image";
     .text {
         font-weight: 200;
@@ -94,5 +95,16 @@ figure {
         display: grid;
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas: "title title title image image image image image image";
+    }
+}
+
+.cover {
+    @include absolute-cover;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    &.parallax {
+        background-attachment: fixed;
+        background-image: url(../../public/images/3.jpg);
     }
 }
